@@ -7,8 +7,17 @@ require_once __DIR__.'/includes/autoloader.php';
 $obj1 = new Operations();
 
 
+$data = array();
+if ( ! isset($argv[1])) {
+    $argv[1] = null;
+}
+
+$data[$argv[1]] = $argv[1];
+
+
 if($argv[1] == "add")
 {
+
     $a = readline('add task: ');
     $b = readline('add priority: ');
     $obj1->Store_Record($a,$b);
